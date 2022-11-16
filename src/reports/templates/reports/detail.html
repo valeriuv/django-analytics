@@ -6,5 +6,15 @@
 {% endblock title %}
     
 {% block content %}
+
 <h1>{{ object.name }}</h1>
+{% if object.image %}
+    <img src="{{ object.image.url }}" class="img-fluid" alt="{{ object.name }}">
+{% endif %}
+<br>
+<h3>Remarks</h3>
+<p>{{object.remarks}}</p>
+<hr>
+<p>Author: {{ object.author.user.username }}</p>
+<p>Created: {{ object.created }}</p>
 {% endblock content %}
